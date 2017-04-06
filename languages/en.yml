@@ -1,0 +1,26 @@
+home: home
+archives: archives
+categories: categories
+tags: tags
+posts: posts 
+search: search
+about: about
+
+counter:
+  tag_name: All tags
+  tag_cloud:
+    zero: No tags
+    one: 1 tag in total
+    other: "%d tags in total"
+  
+  category_name: All categories
+  categories:
+    zero: No categories
+    one: 1 category in total
+    other: "%d categories in total"
+
+  archive_name: archives
+  archive_posts:
+    zero: No posts.
+    one: 1 post.
+    other: "%d posts in total."

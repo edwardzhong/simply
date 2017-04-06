@@ -1,0 +1,69 @@
+
+# html lang
+language: zh-CN
+keywords: hexo theme
+
+# main menu navigation
+menu:
+  home: /
+  # archives: /archives
+  # categories: /categories
+  # tags: /tags
+  search: javascript:;
+  # commonweal: /404.html
+  # about: /about
+
+menu_icon:
+  home: icon-home
+  archives: icon-file-text
+  categories: icon-book
+  tags: icon-tags
+  search: icon-search
+  about: icon-user
+
+state:
+  posts: /archives
+  categories: /categories
+  tags: /tags
+
+social:
+  github: https://github.com/edwardzhong
+  twitter: https://twitter.com/JianfengEdward
+  facebook: https://www.facebook.com/jianfeng.edward
+  weibo: http://weibo.com/1593251850
+  # google-plus: /
+  # qq: /
+  # weixin: /
+  rss: /atom.xml
+
+social_icon:
+  github: icon-github-circled
+  twitter: icon-twitter
+  facebook: icon-facebook
+  weibo: icon-weibo
+  google+: icon-gplus
+  google-plus: icon-gplus
+  qq: icon-qq
+  weixin: icon-wechat
+  wechat: icon-wechat
+  rss: icon-rss
+
+rss: /atom.xml
+
+# Miscelaneous
+favicon: /favicon.ico
+
+# stylesheets loaded in the <head>
+stylesheets:
+- /lib/icons/icon.css
+- /lib/reboto/roboto.css
+- /dist/css/index.css
+
+# scripts loaded in the end of the body
+scripts:
+- /lib/jquery-2.2.3.min.js
+# - /js/search.js
+# - /js/payme.js
+# - /js/sidebar.js
+# - /js/toTop.js
+- /dist/js/index.js

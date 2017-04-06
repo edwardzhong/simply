@@ -1,0 +1,26 @@
+home: 主页
+archives: 文章
+categories: 分类
+tags: 标签
+posts: 文章
+search: 搜索
+about: 关于
+
+counter:
+  tag_name: 所有标签
+  tag_cloud:
+    zero: 暂无标签
+    one: 目前共计 1 个标签
+    other: "目前共计 %d 个标签"
+
+  category_name: 文章分类
+  categories:
+    zero: 暂无分类
+    one: 目前共计 1 个分类
+    other: "目前共计 %d 个分类"
+
+  archive_name: 文章归档
+  archive_posts:
+    zero: 暂无日志。
+    one: 目前共计 1 篇日志。
+    other: "目前共计 %d 篇日志。"
