@@ -9,6 +9,4 @@
 {% include '_partials/comment.swig'%}
 {% endblock %}
 {% block js %}
-<script src="/lib/qrcode.min.js"></script>
-<script src="/js/share.js"></script>
 {% endblock %}

@@ -9,7 +9,7 @@ var minifyCss =require('gulp-minify-css');
 
 gulp.task('less', function () {
     // return watch('./source/less/*.less', function (){//监控到less内容一旦有变化，马上转换为css
-        gulp.src('./source/less/*.less')
+    return gulp.src('./source/less/*.less')
     	.pipe(less())
     	.pipe(gulp.dest('./source/css'));
     // });

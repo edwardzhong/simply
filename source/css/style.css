@@ -138,9 +138,9 @@ table tbody tr:nth-child(2n) {
 }
 .main .top-bottom {
   position: fixed;
-  right: 35px;
-  bottom: 50px;
-  z-index: 997;
+  right: 20px;
+  bottom: 60px;
+  z-index: 996;
   text-align: center;
   cursor: pointer;
 }
@@ -816,6 +816,9 @@ table tbody tr:nth-child(2n) {
   width: 60px;
   height: 60px;
   line-height: 60px;
+}
+html body > #ygt-fix-wrap-1415 > #ygt-input-bar-1415 {
+  z-index: 997;
 }
 @keyframes searchshow {
   0% {

@@ -35,6 +35,4 @@ function setScrollTop(){
 	}
 }
 
-// $(window).scrollTop()-200 = $(document).height() - $(window).height();
-
 setScrollTop();

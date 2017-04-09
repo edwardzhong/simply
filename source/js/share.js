@@ -11,16 +11,17 @@ function init() {
     //微信手Q环境，右上角分享
     
     $('.share').on('click',function(e){
+        e.stopPropagation();
+        e.preventDefault();
         if(isPost=='true'&&(env=='weixin'||env=='qq')){
             showShareOverlay();
             return;
         }
-        e.stopPropagation();
         var self=$(this),
             url=self.attr('data-url'),
             id=url.replace(/\//g,'')
             sharePop=$('#'+id),
-            article=self.parent().parent(),
+            article=self.parent().parent().parent(),
             offset=self.offset(),
             w=self.width(),
             h=self.height();
