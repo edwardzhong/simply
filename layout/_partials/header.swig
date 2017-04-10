@@ -35,7 +35,7 @@
   <meta http-equiv="Cache-Control" content="no-cache">
   <meta http-equiv="Expires" content="0">
   
-  <link rel="dns-prefetch" href="<%= config.url %>">
+  <link rel="dns-prefetch" href="{{ config.url }}">
   <link rel="icon shortcut" type="image/ico" href="{{ theme.favicon }}">
   <meta name="author" content="{{ config.author }}">
   <meta name="description" content="{{ config.description }}">

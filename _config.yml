@@ -48,23 +48,21 @@ social_icon:
   wechat: icon-wechat
   rss: icon-rss
 
-rss: /atom.xml
-
 # Miscelaneous
 favicon: /favicon.ico
 
 # stylesheets loaded in the <head>
 stylesheets:
-- /lib/icons/icon.css
-- /lib/reboto/roboto.css
-- /dist/css/index.css
+  - /lib/icons/icon.css
+  - /lib/reboto/roboto.css
+  - /dist/css/index.css
 
 # scripts loaded in the end of the body
 scripts:
-- /lib/jquery-2.2.3.min.js
-- /lib/qrcode.min.js
-# - /js/search.js
-# - /js/payme.js
-# - /js/sidebar.js
-# - /js/toTop.js
-- /dist/js/index.js
+  - /lib/jquery-2.2.3.min.js
+  - /lib/qrcode.min.js
+  # - /js/search.js
+  # - /js/payme.js
+  # - /js/sidebar.js
+  # - /js/toTop.js
+  - /dist/js/index.js
