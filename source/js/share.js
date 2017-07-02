@@ -5,7 +5,8 @@ function shareInit() {
         sUrl = location.protocol+'//'+location.host+location.pathname,
         sTitle = $('.post-title').html(),
         sDesc = sTitle,
-        sPic = '';
+        sPic = '',
+        sImg =[];
     
     $('.share').on('click',function(e){
         e.stopPropagation();
@@ -19,7 +20,7 @@ function shareInit() {
             url=self.attr('data-url'),
             id=url.replace(/\//g,'')
             sharePop=$('#'+id),
-            article=self.parent().parent().parent(),
+            article=self.parents('article'),
             offset=self.offset(),
             w=self.width(),
             h=self.height();
@@ -27,7 +28,7 @@ function shareInit() {
         sUrl = location.protocol+'//'+location.host+url;
         sTitle = article.find('.post-title').html();
         sDesc = self.attr('data-desc');
-        var sImg= article.find('.img-entry img');
+        sImg= article.find('img');
 
         if(sImg.length){
             sPic=sImg.attr('src');
@@ -54,7 +55,7 @@ function shareInit() {
             tpl.css({
                 top:offset.top+h+5,
                 left:offset.left-150
-            }).on('click',function(e){
+            }).find('.share-input').on('click',function(e){
                 e.stopPropagation();
                 e.preventDefault();
             });
@@ -72,6 +73,8 @@ function shareInit() {
     });
 
     $('.container').on('click','.share-sns',function(e){
+        e.stopPropagation();
+        e.preventDefault();
         var type = $(this).attr('data-type');
         handleClick(type, {
             url:location.protocol+'//'+location.host,

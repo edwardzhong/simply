@@ -104,7 +104,6 @@ table{
 }
 
 .container{
-
 	&.animate-prepare{
 		-webkit-perspective: 1000px;
 		perspective: 1000px;
@@ -191,7 +190,7 @@ table{
 	top: 20px;
 	left: 20px;
 	font-size: 24px;
-	color: @blue;
+	color: darken(@blue,10%);
 	cursor: pointer;
 	z-index: 998;
 }
@@ -310,6 +309,9 @@ table{
 		width: 100%;
 		padding: 30px;
 		background-size: 100%;
+		&:hover{
+			opacity: .6;
+		}
 		.post-title{
 			padding: 0;
 			color: hsl(0,0,100%);
@@ -387,7 +389,7 @@ table{
 	background-color: hsl(0,0,100%);
 	border-radius: 3px;
 	box-shadow: 0 1px 1px hsla(0,0,0,.3),1px 1px 2px hsla(0,0,0,.2);
-	text-shadow: 0 0 1px hsla(0,0,0,.2);
+	text-shadow: 0 0 1px hsla(0,0,0,.1);
 	h3{
 		text-align: center;
 		font-size: 28px;
