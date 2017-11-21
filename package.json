@@ -4,7 +4,7 @@
   "description": "hexo-simply-theme",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "start": "gulp"
   },
   "keywords": [
     "hexo-theme"

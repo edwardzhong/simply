@@ -6,7 +6,6 @@
 </div>
 {% include '_partials/pagination.swig' %}
 {% include '_partials/share.swig' %}
-{% include '_partials/comment.swig'%}
 {% endblock %}
 {% block js %}
 {% endblock %}
