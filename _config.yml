@@ -57,9 +57,9 @@ favicon: /favicon.ico
 
 # stylesheets loaded in the <head>
 stylesheets:
-  - /lib/icons/icon.css
-  - /lib/reboto/roboto.css
-  - /dist/css/index.css
+  - /lib/fontello/fontello.css?t=1
+  - /lib/reboto/roboto.css?t=1
+  - /dist/css/index.css?t=1
 
 # scripts loaded in the end of the body
 scripts:

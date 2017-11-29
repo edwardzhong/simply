@@ -16,7 +16,8 @@ gulp.task('less', function () {
 });
 
 gulp.task('css',function(){
-    return gulp.src('./source/css/*.css')
+    return gulp.src('./source/less/*.less')
+        .pipe(less())
     	.pipe(concatCss("index.css"))
         .pipe(minifyCss())
     	.pipe(gulp.dest('./source/dist/css'))
@@ -29,4 +30,4 @@ gulp.task('js',function(){
 	    .pipe(gulp.dest('./source/dist/js'));
 });
 
-gulp.task("default", ["less","css","js"]);
+gulp.task("default", ["css","js"]);
