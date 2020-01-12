@@ -6,8 +6,8 @@ keywords: hexo theme
 # main menu navigation
 menu:
   home: /
-  # sites: http://jeffzhong.space/sites/
-  demo: http://jeffzhong.space/sites/demo/
+  # sites: /sites/
+  demo: /sites/demo/
   # archives: /archives
   # categories: /categories
   # tags: /tags
