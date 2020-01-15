@@ -1,7 +1,7 @@
 /**
  * 滚动事件统一控制器
  * @param    {String}  fn  返回：false 表示反复执行，true 用于达到某条件后不再执行
- * @Author   jeffzhong(p_jdjfzhong)
+ * @Author   jeffzhong
  * @DateTime 2016-07-14T15:06:16+0800
  */
 var scrollEventCtr=(function(){
