@@ -2,7 +2,7 @@
 <html lang="{{ config.language }}">
 {% include 'header.swig' %}
 <body>
-{% include 'sideBar.swig' %}
+{% include 'side.swig' %}
   <div class="container">
     <div class="main">
     {% autoescape false %}
@@ -10,8 +10,8 @@
     {% endautoescape %}
     {% include 'copyRight.swig' %}
     <div class="top-bottom">
-      <div class="to-top hide" title="to top"><i class="icon icon-up-open"></i></div>
-      <div class="to-bottom hide" title="to bottom"><i class="icon icon-down-open"></i></div>
+      <div class="to-top hide" title="to top"><i class="icon-up"></i></div>
+      <div class="to-bottom hide" title="to bottom"><i class="icon-down"></i></div>
     </div>
     </div>
 

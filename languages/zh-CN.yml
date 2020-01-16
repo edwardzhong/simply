@@ -1,12 +1,12 @@
-home: 主页
+home: 主 页
 sites: 我的项目
 demo: demo
-archives: 文章
-categories: 分类
-tags: 标签
-posts: 文章
-search: 搜索
-about: 关于
+archives: 文 章
+categories: 分 类
+tags: 标 签
+posts: 文 章
+search: 搜 索
+about: 关 于
 
 counter:
   tag_name: 所有标签

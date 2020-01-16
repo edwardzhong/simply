@@ -18,7 +18,7 @@ menu:
 menu_icon:
   home: icon-home
   sites: icon-book
-  demo: icon-tag
+  demo: icon-page
   archives: icon-file-text
   categories: icon-book
   tags: icon-tags
@@ -41,7 +41,7 @@ social:
   rss: /atom.xml
 
 social_icon:
-  github: icon-github-circled
+  github: icon-github
   twitter: icon-twitter
   facebook: icon-facebook
   weibo: icon-weibo
@@ -57,16 +57,12 @@ favicon: /favicon.ico
 
 # stylesheets loaded in the <head>
 stylesheets:
-  - /lib/fontello/fontello.css?t=1
-  - /lib/reboto/roboto.css?t=1
-  - /dist/css/index.css?t=1
+  - /lib/fontello/fontello.css
+  - /lib/reboto/roboto.css
+  - /css/index.css
 
 # scripts loaded in the end of the body
 scripts:
   - /lib/jquery-2.2.3.min.js
   - /lib/qrcode.min.js
-  # - /js/search.js
-  # - /js/payme.js
-  # - /js/sidebar.js
-  # - /js/toTop.js
-  - /dist/js/index.js
+  - /js/index.js

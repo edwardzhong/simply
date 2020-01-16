@@ -23,3 +23,15 @@ var scrollEventCtr=(function(){
         }
     };
 }());
+
+//获取h5环境
+function getEnv() {
+	var ua = navigator.userAgent.toLowerCase();
+	if (/micromessenger(\/[\d\.]+)*/.test(ua)) {
+		return 'weixin';
+	} else if (/qq\/(\/[\d\.]+)*/.test(ua) || /qzone\//.test(ua)) {
+		return 'qq';
+	} else {
+		return 'h5';
+	}
+}

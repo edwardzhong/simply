@@ -1,10 +1,8 @@
 {% extends '_partials/layout.swig' %}
-
-{% set pageType = page.type %}
 {% block body %}
-	{% if pageType == 'tags' %}
+	{% if page.type == 'tags' %}
 		{% include '_partials/tags.swig' %}
-	{% elif pageType == 'categories' %}
+	{% elif page.type == 'categories' %}
 		{% include '_partials/categories.swig' %}
 	{% endif %}
 {% endblock %}

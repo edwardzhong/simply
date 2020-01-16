@@ -53,7 +53,7 @@ function shareInit() {
 				sharePop.css({
 					display: 'block',
 					top: offset.top + h + 5,
-					left: offset.left - 150,
+					left: offset.left - 154,
 				});
 			}
 		} else {
@@ -61,14 +61,14 @@ function shareInit() {
 			var tpl = $(
 				'<div id="' +
 					id +
-					'" class="share-popup" style="display: block;width:220px"> <div class="share-input"> <input type="text" value="' +
+					'" class="share-popup" style="display: block;"> <div class="share-input"> <input type="text" value="' +
 					sUrl +
-					'"> </div> <div class="share-icons"> <a class="weibo share-sns" href="javascript:;" data-type="weibo" title="weibo"> <i class="icon icon-weibo"></i> </a> <a class="weixin share-sns" href="javascript:;" data-type="weixin" title="wechat"> <i class="icon icon-wechat"></i> </a> <a class="qq share-sns" href="javascript:;" data-type="qq" title="qq"> <i class="icon icon-qq"></i> </a> <a class="qzone share-sns" href="javascript:;" data-type="qzone" title="qzone"> <i class="icon icon-star"></i> </a> </div> </div>',
+					'"> </div> <div class="share-icons"> <a class="weibo share-sns" href="javascript:;" data-type="weibo" title="weibo"> <i class="icon-weibo"></i> </a> <a class="weixin share-sns" href="javascript:;" data-type="weixin" title="wechat"> <i class="icon-wechat"></i> </a> <a class="qq share-sns" href="javascript:;" data-type="qq" title="qq"> <i class="icon-qq"></i> </a> <a class="qzone share-sns" href="javascript:;" data-type="qzone" title="qzone"> <i class="icon-qzone"></i> </a> </div> </div>',
 			);
 			$('.container').append(tpl);
 			tpl.css({
 				top: offset.top + h + 5,
-				left: offset.left - 150,
+				left: offset.left - 154,
 			})
 				.find('.share-input')
 				.on('click', function(e) {
@@ -175,44 +175,16 @@ function showWX(opt) {
 	$(document.body)
 		.css('overflow', 'hidden')
 		.append(overlay);
-	popup.show();
-
+	popup.show().removeClass('hide').addClass('show');
 	overlay.on('click', hideWX);
-	popup.find('.close').on('click', hideWX);
 
 	function hideWX() {
 		$(document.body).css('overflow', '');
 		overlay.remove();
-		popup.hide();
+		popup.removeClass('show').addClass('hide');
+		setTimeout(() => {
+			popup.hide();
+		}, 500);
 	}
 }
-
-function getEnv() {
-	var ua = navigator.userAgent.toLowerCase();
-	if (/micromessenger(\/[\d\.]+)*/.test(ua)) {
-		return 'weixin';
-	} else if (/qq\/(\/[\d\.]+)*/.test(ua) || /qzone\//.test(ua)) {
-		return 'qq';
-	} else {
-		return 'h5';
-	}
-}
-
-function browser() {
-	var u = window.navigator.userAgent;
-	return {
-		trident: u.indexOf('Trident') > -1, //IE内核
-		presto: u.indexOf('Presto') > -1, //opera内核
-		webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
-		gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
-		mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
-		ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
-		android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
-		iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
-		iPad: u.indexOf('iPad') > -1, //是否为iPad
-		webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
-		weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
-	};
-}
-
 shareInit();

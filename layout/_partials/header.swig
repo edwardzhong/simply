@@ -1,4 +1,3 @@
-
 {% set pageTitle = page.title || config.subtitle || '' %}
 
 {% if is_archive() %}
@@ -46,13 +45,6 @@
   <meta property="og:type" content="blog">
   <meta property="og:title" content="{{pageTitle}}">
   <meta property="og:description" content="{{config.description }}">
-  <!-- UC Browser Compatible -->
-<!--   <script>
-      var agent = navigator.userAgent.toLowerCase();
-      if(agent.indexOf('ucbrowser')>0) {
-          alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
-      }
-  </script> -->
   {% if theme.stylesheets !== undefined && theme.stylesheets.length > 0 %}
     {# stylesheet list from config.yml #}
     {% for url in theme.stylesheets %}

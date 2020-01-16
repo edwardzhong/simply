@@ -1,37 +1,26 @@
 <div class="list tag-list">
-	<h3>{{ _p('counter.tag_name') }}</h3>
-	<h4>{{ _p('counter.tag_cloud', site.tags.length) }}</h4>
-<div id="tagList"></div>
-
+	<h3 class="page-title">{{ _p('counter.tag_name') }}</h3>
+	<h4 class="sub-title">{{ _p('counter.tag_cloud', site.tags.length) }}</h4>
+	<div id="tagList">
+		{% set tagMap={} %}
+		{% for post in site.posts %}
+			{% for tag in post.tags %}
+				{% if tagMap[tag.name] %}
+					{% set tagMap[tag.name] = tagMap[tag.name]+1 %}
+				{% else %}
+					{% set tagMap[tag.name] = 1 %}
+				{% endif %}
+			{% endfor %}
+		{% endfor %}
+		{% for tag in site.tags %}
+			{% set cls ="small" %}
+			{% if tagMap[tag.name] > 15 %}
+				{% set cls="big" %}
+			{% endif %}
+			{% if tagMap[tag.name] > 9 %}
+				{% set cls="middle" %}
+			{% endif %}
+			<a href="{{ url_for(tag.path) }}" class={{cls}} >{{tag.name}}</a>
+		{% endfor %}
+	</div>
 </div>
-<script>
-var Tags=[],obj={};
-{% for tag in site.tags %}
-	obj={}
-	{% for p in tag %}
-		obj['{{loop.key}}']='{{p}}';
-	{% endfor %}
-	obj['url']='{{url_for(tag.path)}}';
-	obj['length']=parseInt(obj['length'],10);
-	Tags.push(obj);
-{% endfor %}
-
-var container=document.getElementById('tagList'),
-	tpl='',
-	className=['small','middle','big'],
-	maxSize=Tags[0].length,
-	range=[];
-Tags.forEach(function(tag,i){
-	if(tag.length>maxSize){maxSize=tag.length;}
-});
-range=[Math.ceil(maxSize/3),Math.ceil(maxSize/3*2),maxSize];
-Tags.forEach(function(tag,i){
-	for(var i=0,len=range.length;i<len;i++){
-		if(tag.length<=range[i]){
-			tpl+='<a href="'+tag.url+'" class="'+className[i]+'">'+tag.name+'</a>';
-			break;
-		}
-	}
-});
-container.innerHTML = tpl;
-</script>

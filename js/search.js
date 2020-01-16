@@ -12,9 +12,9 @@ function popupSearch() {
 		popupTpl = $(
 			'<div class="search-popup show">' +
 				'<div class="search-top">' +
-				'<div class="search-icon"><i class="icon icon-search"></i></div>' +
-				'<div class="search-close"><i class="icon icon-cancel"></i></div>' +
-				'<div class="search-input"><input type="text" placeholder="搜索"></div></div>' +
+				'<div class="search-icon"><i class="icon-search"></i></div>' +
+				'<div class="search-close"><i class="icon-close"></i></div>' +
+				'<div class="search-input"><input type="text" placeholder="Please input ..."></div></div>' +
 				'<div class="search-content">' +
 				'<h3 class="search-tip">没有内容</h3>' +
 				'<div class="search-result"></div>' +
@@ -29,9 +29,13 @@ function popupSearch() {
 	var resultElem = popupTpl.find('.search-result'),
 		pageElem = popupTpl.find('.search-pagination'),
 		tipElem = popupTpl.find('.search-tip');
-
+	
+	setTimeout(() => {
+		popupTpl.find('input').focus();
+	}, 500);
 	//关闭
 	popupTpl.find('.search-close').on('click', closePopup);
+	overlay.on('click',closePopup);
 	// 输入
 	popupTpl.find('input').on(changeEvent, function() {
 		inputChange.call(this);
@@ -70,6 +74,7 @@ function popupSearch() {
 			num = 0;
 			resultElem.empty();
 			tipElem.html('没有内容');
+			pageElem.html('');
 			return;
 		}
 
@@ -180,7 +185,7 @@ function getResultRow(obj) {
 
 	if (obj.tagStr) {
 		tpl +=
-			'<i class="icon icon-tag"></i>&nbsp;<span>' +
+			'<i class="icon-tags"></i>&nbsp;<span>' +
 			obj.tagStr.replace(/@#/g, '</span>&nbsp;<span>') +
 			'</span></p>';
 	}

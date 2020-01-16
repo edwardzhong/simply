@@ -1,33 +1,39 @@
-var gulp = require('gulp');
-var less = require('gulp-less');
-var watch = require('gulp-watch');
-var uglify =require('gulp-uglify');
-var rename = require('gulp-rename');
-var concat = require('gulp-concat');
-var concatCss = require('gulp-concat-css');
-var minifyCss =require('gulp-minify-css');
+const { src, dest, parallel } = require('gulp');
+const less = require('gulp-less');
+const postcss = require('gulp-postcss');
+const rename = require('gulp-rename');
+const babel = require('gulp-babel');
+const concat = require('gulp-concat');
+const cleanCSS = require('gulp-clean-css');
 
-gulp.task('less', function () {
-    // return watch('./source/less/*.less', function (){//监控到less内容一旦有变化，马上转换为css
-    return gulp.src('./source/less/*.less')
-    	.pipe(less())
-    	.pipe(gulp.dest('./source/css'));
-    // });
-});
+function css() {
+	return src('./less/*.less')
+		.pipe(less())
+		.pipe(postcss())
+		.pipe(cleanCSS({ compatibility: 'ie8' })) //压缩代码，兼容浏览器，优化代码
+		// .pipe(rename({ suffix: '.min' }))
+		.pipe(rename('index.css'))
+		.pipe(dest('./source/css'));
+}
 
-gulp.task('css',function(){
-    return gulp.src('./source/less/*.less')
-        .pipe(less())
-    	.pipe(concatCss("index.css"))
-        .pipe(minifyCss())
-    	.pipe(gulp.dest('./source/dist/css'))
-});
+function js() {
+	return (
+		src('./js/*.js')
+			.pipe(
+				babel({
+					minified: true, //压缩
+					comments: false,
+					sourceType: 'script',
+					// presets: ['@babel/env'],
+					// plugins: ['@babel/transform-runtime']
+				}),
+			)
+			// .pipe(rename({ suffix: '.min' }))
+			.pipe(concat('index.js')) //合并
+			.pipe(dest('./source/js'))
+	);
+}
 
-gulp.task('js',function(){
-	return gulp.src('./source/js/*.js')
-	    .pipe(uglify())
-	    .pipe(concat('index.js'))
-	    .pipe(gulp.dest('./source/dist/js'));
-});
-
-gulp.task("default", ["css","js"]);
+// series   从左至右依次串行执行任务
+// parallel 并行执行任务
+exports.default = parallel(css, js);
