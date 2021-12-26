@@ -7,7 +7,7 @@ keywords: hexo theme
 menu:
   home: /
   # sites: /sites/
-  demo: /sites/demo/
+  demo: https://jeff_zhong.gitee.io/demo/
   # archives: /archives
   # categories: /categories
   # tags: /tags
@@ -57,12 +57,12 @@ favicon: /favicon.ico
 
 # stylesheets loaded in the <head>
 stylesheets:
-  - /lib/fontello/fontello.css
-  - /lib/reboto/roboto.css
-  - /css/index.css
+  - /blog/lib/fontello/fontello.css
+  - /blog/lib/reboto/roboto.css
+  - /blog/css/index.css
 
 # scripts loaded in the end of the body
 scripts:
-  - /lib/jquery-2.2.3.min.js
-  - /lib/qrcode.min.js
-  - /js/index.js
+  - /blog/lib/jquery-2.2.3.min.js
+  - /blog/lib/qrcode.min.js
+  - /blog/js/index.js
